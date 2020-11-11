@@ -30,3 +30,13 @@ canvas {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+#text-final {
+  font-family: "Dancing Script", cursive;
+  opacity: 0;
+  position: absolute;
+  color: white;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

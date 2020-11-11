@@ -41,6 +41,11 @@ document.getElementById("lock").addEventListener("click", function (e) {
     opacity: 0,
     duration: 0.2,
   });
+  gsap.to("#text-final", {
+    opacity: 1,
+    delay: 8,
+    duration: 4,
+  });
 
   const maxRatio = window.devicePixelRatio || 1;
   let ratio = 0.01;
