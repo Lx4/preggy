@@ -16,6 +16,7 @@ img.onload = function () {
 
 document.getElementById("lock").addEventListener("click", function (e) {
   e.preventDefault();
+  document.getElementById("myAudio").play();
   gsap.to("#square-lt", {
     duration: 10,
     x: -window.innerWidth / 2,
@@ -44,12 +45,16 @@ document.getElementById("lock").addEventListener("click", function (e) {
   const maxRatio = window.devicePixelRatio || 1;
   let ratio = 0.01;
   setInterval(() => {
-    ratio <= 0.21 ? (ratio += 0.01) : (ratio = maxRatio);
+    ratio <= 0.21 ? (ratio += 0.001) : (ratio = maxRatio);
 
     console.log(ratio);
-    setCanvasSize(400, 400, ratio);
+    setCanvasSize(
+      Math.floor((window.innerWidth * 80) / 100),
+      (window.innerHeight * 70) / 100,
+      ratio
+    );
     scaleToFit(img);
-  }, 500);
+  }, 50);
 });
 
 //  HELPERS
